@@ -1,4 +1,10 @@
 #!/usr/bin/python3
-for i in range(0, 10):
-    for numb in range(i + 1, 10):
-        print("{}{}".format(i, numb), end=", " if i < 8 or numb < 9 else "\n")
+def uppercase(up):
+    for char in up:
+        if 97 <= ord(char) <= 122:
+            print("{}".format(chr(ord(char) - 32)), end="")
+        else:
+            print("{}".format(char), end="")
+print("")
+
+
