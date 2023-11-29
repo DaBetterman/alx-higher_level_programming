@@ -1,6 +1,13 @@
 #!/usr/bin/python3
-for i in range(11):
-    if i % 2 == 0:
-        print("{} is even".format(i))
+def remove_char_at(str, n):
+    str_num = len(str)
+    if n < 0 or str_num <= n:
+        return (str)
     else:
-        print("{} is odd".format(i))
+        string = ""
+        for i in range(str_num):
+            if i == n:
+                continue
+            else:
+                string += str[i]
+        return (string)
