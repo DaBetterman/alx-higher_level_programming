@@ -1,6 +1,4 @@
 #!/usr/bin/python3
-
-
 def best_score(a_dictionary):
     count = 0
     best_score = None
@@ -9,4 +7,4 @@ def best_score(a_dictionary):
             if value > count:
                 count = value
                 best_score = key
-    return best_score
+    return (best_score)
