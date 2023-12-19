@@ -1,6 +1,6 @@
 # 🇿🇦 0x06. Python - Classes and Objects 🌍
 
-For this project, I'll be learning about Classes and Objects.
+In this project I will be learning how to implement classes and object oriented programming in python.
 
 ## 🏃🏽‍♂️ Getting Started
 
