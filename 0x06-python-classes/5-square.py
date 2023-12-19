@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-import sys
 
 """
 This module defines the Square class.
