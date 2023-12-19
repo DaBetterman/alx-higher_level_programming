@@ -9,7 +9,8 @@ class Square:
         __position (tuple): The position of the square. Default is (0, 0).
 
     Methods:
-        __init__(self, size=0, position=(0, 0)): Initializes a new instance of the Square class.
+        __init__(self, size=0, position=(0, 0)):
+        Initializes a new instance of the Square class.
             Raises:
                 TypeError: If size is not an integer or
                           position is not a tuple of 2 positive integers.
@@ -19,8 +20,10 @@ class Square:
         size(self): Getter method for the size attribute.
         size(self, value): Setter method for the size attribute.
         position(self): Getter method for the position attribute.
-        position(self, value): Setter method for the position attribute.
-        my_print(self): Prints the square with the character '#' using position.
+        position(self, value): Setter method
+        for the position attribute.
+        my_print(self): Prints the square
+        with the character '#' using position.
 
     """
 
@@ -93,7 +96,8 @@ class Square:
             ValueError: If position contains non-positive integers.
         """
         if not isinstance(value, tuple) or len(value) != 2 or \
-                not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
+                not all(isinstance(i, int) for i in value) or\
+                any(i < 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
