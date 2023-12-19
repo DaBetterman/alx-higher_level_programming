@@ -3,8 +3,7 @@
 """
 This module defines the Square class.
 
-It provides a representation of a square with private size and position attributes,
-getter and setter methods for size and position, area calculation, and printing.
+It provides a basic representation of a square.
 """
 
 
@@ -17,13 +16,13 @@ class Square:
         __position (tuple): The position of the square. Default is (0, 0).
 
     Methods:
-        __init__(self, size=0, position=(0, 0)): Initializes a new instance of the Square class.
+        __init__(self, size=0): Initializes a new instance of the Square class.
             Raises:
-                TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
-                ValueError: If size is less than 0 or position contains non-positive integers.
+                TypeError: If size is not an integer.
+                ValueError: If size is less than 0.
         area(self): Calculates and returns the area of the square.
-        my_print(self): Prints the square using '#' character and space, respecting the position.
-            If size is equal to 0, print an empty line.
+        size(self): Getter method for the size attribute.
+        size(self, value): Setter method for the size attribute.
     """
     def __init__(self, size=0, position=(0, 0)):
         """
@@ -34,8 +33,10 @@ class Square:
             position (tuple): The position of the square. Default is (0, 0).
 
         Raises:
-            TypeError: If size is not an integer or position is not a tuple of 2 positive integers.
-            ValueError: If size is less than 0 or position contains non-positive integers.
+            TypeError: If size is not an integer or
+            position is not a tuple of 2 positive integers.
+            ValueError: If size is less than 0 or
+            position contains non-positive integers.
         """
         self.size = size
         self.position = position
@@ -91,7 +92,8 @@ class Square:
             TypeError: If value is not a tuple of 2 positive integers.
             ValueError: If position contains non-positive integers.
         """
-        if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
+        if not isinstance(value, tuple) or len(value) != 2\
+or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
             raise TypeError("position must be a tuple of 2 positive integers")
         else:
             self.__position = value
@@ -107,7 +109,8 @@ class Square:
 
     def my_print(self):
         """
-        Prints the square using '#' character and space, respecting the position.
+        Prints the square using '#' character
+        and space, respecting the position.
 
         If size is equal to 0, print an empty line.
         """
