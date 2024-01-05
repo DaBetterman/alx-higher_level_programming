@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 class LockedClass:
     """Locked class: can't set instance attributes except 'first_name'
     """
