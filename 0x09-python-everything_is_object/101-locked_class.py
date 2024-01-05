@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""
-A class that prevents the user
-from dynamically creating new instance attributes
-"""
 
 class LockedClass:
-    __slots__ = ("first_name")
-
-    def __init__(self):
-        pass
+    """Locked class: can't set instance attributes to it
+    """
+    def __setattr__(self, name, value):
+        if name == "first_name":
+            self.__dict__[name] = value
+        else:
+            raise AttributeError("'LockedClass' object has\
+ no attribute '" + name + "'")
