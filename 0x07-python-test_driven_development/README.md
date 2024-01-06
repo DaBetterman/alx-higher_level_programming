@@ -1,6 +1,6 @@
 # 🇿🇦 0x07. Python - Test-driven development 🌍
 
-In this project I will be learning how to test my codes using test cases.
+In this project I will be learning about the ``doctest`` module and unit testing. The goal is to create unit tests before creating the actual program itself.
 
 ## 🏃🏽‍♂️ Getting Started
 
