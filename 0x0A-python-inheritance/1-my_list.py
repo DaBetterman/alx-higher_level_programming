@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module for print_sorted method
+"""
 
 
 class MyList(list):

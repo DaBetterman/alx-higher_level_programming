@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""
+Module for looking up a method
+"""
 
 
 def is_same_class(obj, a_class):
