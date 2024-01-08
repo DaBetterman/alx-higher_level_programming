@@ -4,4 +4,7 @@ def lookup(obj):
     a function that returns the list of available
     attributes and methods of an object
     """
-    return dir(obj)
+    if not isinstance(obj, list):
+        return None
+    else:
+        return dir(obj)
