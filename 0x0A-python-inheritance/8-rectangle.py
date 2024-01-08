@@ -34,9 +34,16 @@ class BaseGeometry:
 
 class Rectangle(BaseGeometry):
     """
-    Rectangle shape, inherits from basegeometry
+    A class representing a rectangle, inheriting from BaseGeometry.
     """
+
     def __init__(self, width, height):
+        """
+        Initializes a Rectangle instance with the specified width and height.
+        width and height must be positive integers.
+        """
+        self.__width = 0
+        self.__height = 0
         self.integer_validator("width", width)
         self.integer_validator("height", height)
         self.__width = width
