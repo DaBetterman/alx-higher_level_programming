@@ -18,4 +18,10 @@ def save_to_json_file(my_obj, filename):
         filename: The name of the file to write to.
     """
     with open(filename, "w") as new_file:
-        json.dump(my_obj, new_file)
+        new_file = json.dumps(my_obj)
+        return new_file
+
+    #    can be done without returning aswell
+    #  and using json.dump instead of dumps
+    #  with open(filename, "w") as new_file:
+    #     json.dump(my_obj, new_file)
