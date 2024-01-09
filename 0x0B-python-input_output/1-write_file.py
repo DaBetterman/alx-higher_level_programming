@@ -2,6 +2,8 @@
 """
 This script defines a function for writing text to a file.
 """
+
+
 def write_file(filename="", text=""):
     """
     Write the given text to the specified file.
