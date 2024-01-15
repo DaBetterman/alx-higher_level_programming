@@ -93,14 +93,77 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
+        """
+        Calculate and return the area of the rectangle.
+
+        Returns:
+            int: The area of the rectangle.
+        """
         return self.height * self.width
 
     def display(self):
-        for i in range(self.height):
-            for j in range(self.width):
-                print("#", end="")
+        """
+        Display the rectangle by printing '#' characters.
+
+        Note:
+            This method prints the
+            rectangle's position and dimensions.
+        """
+        # for i in range(self.height):
+        #     for j in range(self.width):
+        #         print("#", end="")
+        #     print("")
+
+        for i in range(self.y):
             print("")
 
+        for i in range(self.height):
+            print(" " * self.x + "#" * self.width)
+
     def __str__(self):
-        return "[Rectangle] ({}) {}/\
-{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        """
+        Return a string representation of the rectangle.
+
+        Returns:
+            str: A formatted string
+            representing the rectangle's information.
+        """
+        name = self.__class__.__name__
+        return "[{}] ({}) {}/{} - {}/{}\
+".format(name, self.id, self.x, self.y, self.width, self.height)
+
+    def update(self, *args, **kwargs):
+        """
+        Update the attributes of the rectangle.
+
+        Args:
+            *args: Variable length argument list
+                    containing values for id,
+                    width, height, x, and y.
+            **kwargs: Arbitrary keyword arguments
+                    containing values for
+                    id, width, height, x, and y.
+        """
+        if args:
+            attr = ['id', 'width', 'height', 'x', 'y']
+            for index, arg in enumerate(args):
+                setattr(self, attr[index], arg)
+        elif kwargs:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
+
+    def to_dictionary(self):
+        """
+        Convert the rectangle's attributes to a dictionary.
+
+        Returns:
+            dict: A dictionary containing the
+            rectangle's id, width, height, x, and y.
+        """
+        return {
+            'id': self.id,
+            'width': self.width,
+            'height': self.height,
+            'x': self.x,
+            'y': self.y
+        }
