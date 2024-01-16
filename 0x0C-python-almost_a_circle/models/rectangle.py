@@ -95,19 +95,12 @@ class Rectangle(Base):
     def area(self):
         """
         Calculate and return the area of the rectangle.
-
-        Returns:
-            int: The area of the rectangle.
         """
         return self.height * self.width
 
     def display(self):
         """
         Display the rectangle by printing '#' characters.
-
-        Note:
-            This method prints the
-            rectangle's position and dimensions.
         """
         # for i in range(self.height):
         #     for j in range(self.width):
@@ -123,10 +116,6 @@ class Rectangle(Base):
     def __str__(self):
         """
         Return a string representation of the rectangle.
-
-        Returns:
-            str: A formatted string
-            representing the rectangle's information.
         """
         name = self.__class__.__name__
         return "[{}] ({}) {}/{} - {}/{}\
@@ -135,14 +124,6 @@ class Rectangle(Base):
     def update(self, *args, **kwargs):
         """
         Update the attributes of the rectangle.
-
-        Args:
-            *args: Variable length argument list
-                    containing values for id,
-                    width, height, x, and y.
-            **kwargs: Arbitrary keyword arguments
-                    containing values for
-                    id, width, height, x, and y.
         """
         if args:
             attr = ['id', 'width', 'height', 'x', 'y']
@@ -155,10 +136,6 @@ class Rectangle(Base):
     def to_dictionary(self):
         """
         Convert the rectangle's attributes to a dictionary.
-
-        Returns:
-            dict: A dictionary containing the
-            rectangle's id, width, height, x, and y.
         """
         return {
             'id': self.id,
@@ -169,10 +146,8 @@ class Rectangle(Base):
         }
 
     def to_csv(self):
-        """Returns CSV string representation of the Rectangle object.
-
-        Returns:
-            str: CSV string.
+        """
+        Returns CSV string representation of the Rectangle object.
         """
         return "{},{},{},{},\
             {}".format(self.id, self.width, self.height, self.x, self.y)

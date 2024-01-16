@@ -9,15 +9,6 @@ This script defines a class called Base.
 class Base:
     """
     Base class for basic functionality.
-
-    Attributes:
-        __nb_objects (int): A class variable
-        to keep track of the number of instances.
-        id (int): An identifier for each instance.
-
-    Methods:
-        __init__(self, id=None): Constructor method
-        that initializes an instance with an optional id.
     """
 
     __nb_objects = 0
@@ -25,10 +16,6 @@ class Base:
     def __init__(self, id=None):
         """
         Constructor method for the Base class.
-
-        Args:
-            id (int, optional): An identifier for
-            the instance. Defaults to None.
         """
         self.id = id
 
@@ -43,13 +30,6 @@ class Base:
         """
         Convert a list of dictionaries
         to a JSON-formatted string.
-
-        Args:
-            list_dictionaries (list): A
-            list of dictionaries.
-
-        Returns:
-            str: A JSON-formatted string.
         """
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
@@ -60,12 +40,6 @@ class Base:
     def save_to_file(cls, list_objs):
         """
         Save a list of objects to a JSON file.
-
-        Args:
-            list_objs (list): A list of objects.
-
-        Returns:
-            None
         """
         filename = cls.__name__ + ".json"
         with open(filename, "w") as file:
@@ -79,12 +53,6 @@ class Base:
     def from_json_string(json_string):
         """
         Returns a list of dictionary objects evaluated from JSON string.
-
-        Args:
-            json_string (str): JSON string.
-
-        Returns:
-            list: List of dictionaries.
         """
         if json_string is None or len(json_string) == 0:
             return []
@@ -95,12 +63,6 @@ class Base:
         """
         Creates a new instance of the subclass using that class's
         update method after instantiating one instance.
-
-        Args:
-            **dictionary: Double pointer to a dictionary.
-
-        Returns:
-            Base: Instance with attributes set.
         """
         if cls.__name__ == "Rectangle":
             dummy_instance = cls(1, 1)
@@ -115,9 +77,6 @@ class Base:
     def load_from_file(cls):
         """
         Returns a list of instances loaded from a file.
-
-        Returns:
-            list: List of instances.
         """
         cname = cls.__name__
 
@@ -137,9 +96,6 @@ class Base:
     def save_to_file_csv(cls, list_objs):
         """
         Saves a list of sub-class objects to their file as CSV.
-
-        Args:
-            list_objs (list): List of instances inheriting from Base.
         """
         if list_objs is None:
             list_objs = []
@@ -155,10 +111,8 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        """Loads a list of objects from their CSV file.
-
-        Returns:
-            list: List of instances.
+        """
+        Loads a list of objects from their CSV file.
         """
         cname = cls.__name__
 
@@ -178,13 +132,8 @@ class Base:
 
     @classmethod
     def get_cname_from_sublist(cls, list_objs):
-        """Gets proper cname to use when saving objects.
-
-        Args:
-            list_objs (list): List of instances inheriting from Base.
-
-        Returns:
-            str: Class name.
+        """
+        Gets proper cname to use when saving objects.
         """
         cname = None
         for i, obj in enumerate(list_objs):
@@ -198,7 +147,8 @@ class Base:
 
     @staticmethod
     def to_csv_lines(list_csv):
-        """returns CSV string representation from list of sub class
+        """
+        returns CSV string representation from list of sub class
             objects represented in their csv form
         """
         builder = ""
@@ -212,11 +162,8 @@ class Base:
 
     @staticmethod
     def draw(list_rectangles, list_squares):
-        """Opens a window and draws all the Rectangles and Squares.
-
-        Args:
-            list_rectangles (list): List of Rectangle instances.
-            list_squares (list): List of Square instances.
+        """
+        Opens a window and draws all the Rectangles and Squares.
         """
         window = turtle.Screen()
         window.bgcolor("white")
