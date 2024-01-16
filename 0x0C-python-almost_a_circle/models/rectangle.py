@@ -174,4 +174,5 @@ class Rectangle(Base):
         Returns:
             str: CSV string.
         """
-        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
+        return "{},{},{},{},\
+            {}".format(self.id, self.width, self.height, self.x, self.y)

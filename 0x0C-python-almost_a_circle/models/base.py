@@ -225,7 +225,7 @@ class Base:
         """
         window = turtle.Screen()
         window.bgcolor("white")
-        
+
         # Draw Rectangles
         for rectangle in list_rectangles:
             turtle.penup()
