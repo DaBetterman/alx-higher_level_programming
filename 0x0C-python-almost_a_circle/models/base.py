@@ -38,8 +38,8 @@ class Base:
 
         lists = cls.to_json_string(list_dic)
 
-        with open(filename, 'w') as f:
-            f.write(lists)
+        with open(filename, 'w') as new:
+            new.write(lists)
 
     @staticmethod
     def from_json_string(json_string):
@@ -66,14 +66,14 @@ class Base:
         if os.path.exists(filename) is False:
             return []
 
-        with open(filename, 'r') as f:
-            list_str = f.read()
+        with open(filename, 'r') as new:
+            list_str = new.read()
 
         list_cls = cls.from_json_string(list_str)
         list_ins = []
 
-        for index in range(len(list_cls)):
-            list_ins.append(cls.create(**list_cls[index]))
+        for i in range(len(list_cls)):
+            list_ins.append(cls.create(**list_cls[i]))
 
         return list_ins
 
@@ -95,8 +95,8 @@ class Base:
             pass
         else:
             for obj in list_objs:
-                for kv in range(len(list_keys)):
-                    list_dic[kv] = obj.to_dictionary()[list_keys[kv]]
+                for item in range(len(list_keys)):
+                    list_dic[item] = obj.to_dictionary()[list_keys[item]]
                 matrix.append(list_dic[:])
 
         with open(filename, 'w') as writeFile:
@@ -124,13 +124,13 @@ class Base:
 
         for csv_elem in csv_list:
             dict_csv = {}
-            for kv in enumerate(csv_elem):
-                dict_csv[list_keys[kv[0]]] = int(kv[1])
+            for item in enumerate(csv_elem):
+                dict_csv[list_keys[item[0]]] = int(item[1])
             matrix.append(dict_csv)
 
         list_ins = []
 
-        for index in range(len(matrix)):
-            list_ins.append(cls.create(**matrix[index]))
+        for i in range(len(matrix)):
+            list_ins.append(cls.create(**matrix[i]))
 
         return list_ins

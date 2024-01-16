@@ -43,9 +43,10 @@ class Square(Rectangle):
 
     def update(self, *args, **kwargs):
         """ update method """
-        if args is not None and len(args) is not 0:
+        lenght = len(args)
+        if args is not None and lenght != 0:
             list_atr = ['id', 'size', 'x', 'y']
-            for i in range(len(args)):
+            for i in range(lenght):
                 if list_atr[i] == 'size':
                     setattr(self, 'width', args[i])
                     setattr(self, 'height', args[i])
