@@ -77,7 +77,8 @@ class Base:
 
     @staticmethod
     def from_json_string(json_string):
-        """Returns a list of dictionary objects evaluated from JSON string.
+        """
+        Returns a list of dictionary objects evaluated from JSON string.
 
         Args:
             json_string (str): JSON string.
@@ -91,7 +92,8 @@ class Base:
 
     @classmethod
     def create(cls, **dictionary):
-        """Creates a new instance of the subclass using that class's
+        """
+        Creates a new instance of the subclass using that class's
         update method after instantiating one instance.
 
         Args:
@@ -111,7 +113,8 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        """Returns a list of instances loaded from a file.
+        """
+        Returns a list of instances loaded from a file.
 
         Returns:
             list: List of instances.
@@ -132,7 +135,8 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        """Saves a list of sub-class objects to their file as CSV.
+        """
+        Saves a list of sub-class objects to their file as CSV.
 
         Args:
             list_objs (list): List of instances inheriting from Base.
@@ -140,16 +144,12 @@ class Base:
         if list_objs is None:
             list_objs = []
 
-        # Get class name from the first object in the list
         cname = cls.__name__, list_objs
 
-        # Create a list of CSV strings using to_csv method
         super_list = [obj.to_csv() for obj in list_objs]
 
-        # Convert the list of CSV strings to a single CSV string
         write_str = cls.to_csv_lines(super_list)
 
-        # Write the CSV string to a file with the class name as the filename
         with open("{}.csv".format(cname), 'w') as myFile:
             myFile.write(write_str)
 
@@ -160,21 +160,16 @@ class Base:
         Returns:
             list: List of instances.
         """
-        # Get class name
         cname = cls.__name__
 
         try:
-            # Read the file content
             with open(f"{cname}.csv", 'r', encoding='utf-8') as myFile:
                 lines = myFile.readlines()
         except FileNotFoundError:
-            # If the file doesn't exist, return an empty list
             return []
 
-        # Use from_csv_lines to get a list of lists
         csv_list_list = cls.from_csv_lines(lines)
 
-        # Create instances using the update method
         inst_list = [cls(1, 1) for _ in range(len(csv_list_list))]
         for i, csv_inst in enumerate(csv_list_list):
             inst_list[i].update(*csv_inst)
@@ -226,7 +221,6 @@ class Base:
         window = turtle.Screen()
         window.bgcolor("white")
 
-        # Draw Rectangles
         for rectangle in list_rectangles:
             turtle.penup()
             turtle.goto(rectangle.x, rectangle.y)
@@ -240,7 +234,6 @@ class Base:
             turtle.right(90)
             turtle.forward(rectangle.height)
 
-        # Draw Squares
         for square in list_squares:
             turtle.penup()
             turtle.goto(square.x, square.y)
