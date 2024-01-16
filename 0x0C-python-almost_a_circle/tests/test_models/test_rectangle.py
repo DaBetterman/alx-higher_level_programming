@@ -7,6 +7,7 @@
 import sys
 import unittest
 from models.rectangle import Rectangle
+from capture_manager import capture
 
 
 class TestRectangle(unittest.TestCase):

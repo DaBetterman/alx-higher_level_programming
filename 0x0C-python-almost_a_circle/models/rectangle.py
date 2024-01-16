@@ -167,3 +167,11 @@ class Rectangle(Base):
             'x': self.x,
             'y': self.y
         }
+
+    def to_csv(self):
+        """Returns CSV string representation of the Rectangle object.
+
+        Returns:
+            str: CSV string.
+        """
+        return "{},{},{},{},{}".format(self.id, self.width, self.height, self.x, self.y)
