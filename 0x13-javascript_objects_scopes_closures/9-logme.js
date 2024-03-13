@@ -1,7 +1,7 @@
 #!/usr/bin/node
 
-let argc = 0;
+let argc = -1;
 exports.logMe = function (item) {
-  argc++;
+  ++argc;
   console.log(`${argc}: ${item}`);
 };
