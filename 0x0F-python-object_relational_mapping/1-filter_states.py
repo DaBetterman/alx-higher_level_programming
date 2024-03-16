@@ -10,13 +10,15 @@ lists all states with a name starting with N (upper N)
 import MySQLdb
 import sys
 
-db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], password=sys.argv[2], database=sys.argv[3])
-cursor = db.cursor()
-cursor.execute('SELECT * FROM states WHERE name LIKE "N%"')
-rows = cursor.fetchall()
+if __name__ == "__main__":
 
-for row in rows:
-	print(row)
+	db = MySQLdb.connect(host='localhost', port=3306, user=sys.argv[1], password=sys.argv[2], database=sys.argv[3])
+	cursor = db.cursor()
+	cursor.execute('SELECT * FROM states WHERE name LIKE "N%"')
+	rows = cursor.fetchall()
 
-cursor.close()
-db.close()
+	for row in rows:
+		print(row)
+
+	cursor.close()
+	db.close()
