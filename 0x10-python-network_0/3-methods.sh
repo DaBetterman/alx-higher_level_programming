@@ -1,4 +1,4 @@
 #!/bin/bash
-# A Bash script that takes in a URL and displays all HTTP methods the server will accept.
+# script to get the allowed methods in an server if availaible through OPTIONS http request
 curl -s -I -X OPTIONS "$1" | grep 'Allow:' | cut -f2- -d' '
 
