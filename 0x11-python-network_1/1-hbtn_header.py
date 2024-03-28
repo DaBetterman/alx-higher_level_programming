@@ -10,5 +10,5 @@ variable found in the header of the response.
 url = sys.argv[1]
 
 with urllib.request.urlopen(url) as file:
-    if 'X-Request-Id' in file.headers:
-        print(file.headers['X-Request-Id'])
+    headers = file.info()
+    print(headers['X-Request-Id'])
